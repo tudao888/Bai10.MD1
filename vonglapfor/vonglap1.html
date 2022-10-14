@@ -5,7 +5,29 @@
     <title>Title</title>
 </head>
 <body>
+<button type= "button" onclick="letgo()">Bắt đầu</button>
 <script>
+    // Bài 8: Game đoán số
+    function letgo() {
+        let a = +prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?")
+        let random = Math.floor(Math.random()*a)
+        console.log(random);
+        for (let i=0;i<3;i++) {
+             let b = +prompt("Số bạn đoán là");
+            if (b === random) {
+                alert("Bạn đã đoán đúng, số đó là:" + random);
+                break;
+            }
+            else {
+                alert ("Bạn còn" + (2-i) + "lượt đoán");
+            }
+        }
+
+    }
+
+
+
+
     // Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
     // for (let i = 0; i <100 ; i++) {
     //     document.write(i + "<br>")
@@ -28,26 +50,27 @@
 //     } alert("Nhiệt độ bình thường")
 
 
-//     Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    // Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
 
-    let F = 0;
-    // let F1 = 0;
-    // let F2 = 0;
-    // let fibonaci = "";
-    // for (let i = 0; i<=20; i++) {
-    // if (i==0) {
-    //     F = 1
-    //     F2 = 1
-    //     fibonaci += F + "<br>";
-    // }
-    // else {
-    //     F = F1 + F2
-    //     F1 = F2
-    //     F2 = F
-    //     fibonaci += F + "<br> ";
-    // }
-    // }
-    // document.write(fibonaci)
+    let F0 = 0;
+    let F1 = 0;
+    let F2 = 0;
+    let fibonaci = "";
+    for (let i = 0; i<20; i++) {
+    if (i==0) {
+        F0 = 0
+        F1 = 1
+        F2 = 1
+        fibonaci += F2 + "<br>";
+    }
+    else {
+        F2 = F1 + F0
+        F0 = F1
+        F1 = F2
+        fibonaci += F2 + "<br> ";
+    }
+    }
+    document.write(fibonaci)
 
 
 
@@ -75,19 +98,50 @@
 
 //    Bài tiếp: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz",
     //    5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
-    let i = 0;
-    for (i=0; i<=100; i++) {
+    // let i = 0;
+    // for (i=1; i<100; i++) {
+    //     if (i%3===0) {
+    //         document.write("Fizz" + "<br>")
+    //     }
+    //     else if (i % 5 === 0) {
+    //         document.write("Buzz" + "<br>")
+    //         }
+    //     else {
+    //         if (i % 3 === 0 && i % 5 === 0) {
+    //             document.write("Fizz" + "Buzz" + "<br>")
+    //         }
+    //         else {document.write(i + "<br>")}
+    //     }
+    // }
 
-        if (i%3===0) {
-            document.write("Fizz" + "<br>")
-        }
-        else if (i%5===0) {
-            document.write("Buzz" + "<br>")
-            }
-        else if (i%3===0&&i%5===0) {
-            document.write("Fizz" + "Buzz" + "<br>")
-        }
-    }    document.write(i + "<br>")
+
+
+    //
+    // bài 9: tinh giai thua của số(n)
+    // let n = prompt("Nhap vao so n")
+    // let giaithua = 1;
+    // for (let i=1; i<=n; i++) {
+    //     giaithua *=i;
+    // }    document.write(giaithua);
+    //
+
+    // Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+//     for (let i=0;i<5;i++) {
+//     for (let j = 0; j <= i; j++) {
+//         document.write("*")
+//     }
+//     document.write("<br>");
+// }
+//
+//     for (let c=5;c>=1;c--) {
+//         for (let d = 5; d >= c; d--) {
+//             document.write("*")
+//         }
+//         document.write("<br>");
+//     }
+
+
 </script>
+
 </body>
 </html>
